@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 3.2rem 16rem;
-  background: ${(props) => props.theme["green-600"]};
+  //background: ${(props) => props.theme["green-600"]};
 
 
   img {
