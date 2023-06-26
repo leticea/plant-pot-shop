@@ -18,7 +18,7 @@ export const Container = styled.div`
     justify-content: center;
     position: absolute;
     top: 0;
-
+    user-select: none;
     text-decoration: none;
 
     //border: 1px solid red;
@@ -53,5 +53,51 @@ export const Container = styled.div`
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
+  }
+`;
+
+export const InfoGrid = styled.ul`
+  width: 66.7rem;
+  margin: 35.2rem 71.3rem 10.8rem 16rem;
+
+  font-size: 2.3rem;
+  line-height: 130%;
+  color: ${(props) => props.theme["gray-700"]};
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+
+  position: absolute;
+  left: 0;
+  gap: 2rem;
+
+  //border: 1px solid red;
+`;
+
+const ICON_COLORS = {
+  yellowDark: "yellow-600",
+  yellow: "yellow-400",
+  green: "green-800",
+  gray: "gray-700",
+} as const;
+
+interface InfoWithIconProps {
+  iconColor: keyof typeof ICON_COLORS;
+}
+
+export const InfoWithIcon = styled.li<InfoWithIconProps>`
+  display: flex;
+  gap: 12px;
+
+  svg {
+    background: ${(props) => props.theme[ICON_COLORS[props.iconColor]]};
+    color: ${(props) => props.theme["gray-100"]};
+
+    padding: 0.8rem;
+    border-radius: 9999px;
+
+    width: 3.2rem;
+    height: 3.2rem;
   }
 `;

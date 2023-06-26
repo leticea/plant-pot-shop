@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 3.2rem 16rem;
   background: ${(props) => props.theme["gray-100"]};
+  user-select: none;
   position: sticky;
   top: 0;
   left: 0;
