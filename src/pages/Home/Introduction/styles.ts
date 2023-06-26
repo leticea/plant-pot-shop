@@ -58,7 +58,7 @@ export const Container = styled.div`
 
 export const InfoGrid = styled.ul`
   width: 66.7rem;
-  margin: 35.2rem 71.3rem 10.8rem 16rem;
+  margin: 40rem 71.3rem 10.8rem 16rem;
 
   font-size: 2.3rem;
   line-height: 130%;
