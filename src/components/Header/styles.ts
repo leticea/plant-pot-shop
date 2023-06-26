@@ -6,7 +6,15 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 3.2rem 16rem;
-  //background: ${(props) => props.theme["green-600"]};
+  background: ${(props) => props.theme["gray-100"]};
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  a:first-child {
+    color: ${(props) => props.theme["orange-800"]};
+  }
 
   nav {
     display: flex;
@@ -64,11 +72,5 @@ export const HeaderContainer = styled.header`
         font-size: 1.2rem;
       }
     }
-  }
-
-  img {
-    width: 160px;
-    height: 160px;
-    border: none;
   }
 `;

@@ -21,4 +21,6 @@ export const defaultTheme = {
   "yellow-100": "#F1E9C9",
   "yellow-400": "#DBAC2C",
   "yellow-600": "#C47F17",
+
+  "orange-800": "#9a3412",
 };
