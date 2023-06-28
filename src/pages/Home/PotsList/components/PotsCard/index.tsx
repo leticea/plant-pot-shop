@@ -1,4 +1,5 @@
-import { Description, Name, PotsCardContainer, Tags } from "./styles";
+import { moneyFormat } from "../../../../../utils/moneyFormat";
+import { Description, Footer, Name, PotsCardContainer, Tags } from "./styles";
 
 export interface PlantPotsProps {
   id: number;
@@ -22,6 +23,12 @@ export function PotsCard({ pots }: PlantPotsCardProps) {
       })}
       <Name>{pots.name}</Name>
       <Description>{pots.description}</Description>
+      <Footer>
+        <p>
+          R$
+          <span>{moneyFormat(pots.price)}</span>
+        </p>
+      </Footer>
     </PotsCardContainer>
   );
 }

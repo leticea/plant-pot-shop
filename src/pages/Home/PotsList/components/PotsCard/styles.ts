@@ -72,3 +72,37 @@ export const Description = styled.h1`
   font-size: 1.4rem;
   line-height: 130%;
 `;
+
+export const Footer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+
+  position: absolute;
+  height: 3.8rem;
+  left: 2.4rem;
+  right: 2.4rem;
+  bottom: 2rem;
+
+  p {
+    width: 6.7rem;
+    height: 3.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: ${(props) => props.theme["gray-700"]};
+  }
+
+  span {
+    font-family: "Baloo 2";
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: ${(props) => props.theme["gray-700"]};
+  }
+`;
