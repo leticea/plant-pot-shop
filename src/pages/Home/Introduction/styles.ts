@@ -4,6 +4,7 @@ export const Container = styled.div`
   height: 40rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
 
   //border: 1px solid red;
@@ -57,10 +58,8 @@ export const Container = styled.div`
 `;
 
 export const InfoGrid = styled.ul`
-  width: 66.7rem;
-  margin: 40rem 71.3rem 10.8rem 16rem;
-
-  font-size: 2.3rem;
+  width: 67rem;
+  font-size: 2.4rem;
   line-height: 130%;
   color: ${(props) => props.theme["gray-700"]};
 
@@ -69,7 +68,7 @@ export const InfoGrid = styled.ul`
   list-style: none;
 
   position: absolute;
-  left: 0;
+  bottom: 0;
   gap: 2rem;
 
   //border: 1px solid red;
