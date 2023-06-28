@@ -18,7 +18,7 @@ export const plantPots = [
     name: "Verona Antique",
     description: "Vaso Plástico",
     image: roundBeige,
-    price: 149.9,
+    price: 97.9,
   },
   {
     id: 2,
@@ -50,7 +50,7 @@ export const plantPots = [
     name: "Malta Redondo Rusty",
     description: "Vaso Plástico",
     image: round,
-    price: 199.9,
+    price: 78.9,
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ export const plantPots = [
     name: "Iguatemi Rusty",
     description: "Vaso Plástico",
     image: iguatemi,
-    price: 205.9,
+    price: 99.9,
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ export const plantPots = [
     name: "Malta Trapézio Pedra",
     description: "Vaso Plástico",
     image: trapeze,
-    price: 139.9,
+    price: 89.9,
   },
   {
     id: 10,
@@ -90,7 +90,7 @@ export const plantPots = [
     name: "Malta Trapézio Rusty",
     description: "Vaso Plástico",
     image: brownTrapeze,
-    price: 179.9,
+    price: 94.9,
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const plantPots = [
     name: "Malta Trapézio Areia",
     description: "Vaso Plástico",
     image: sandTrapeze,
-    price: 124.9,
+    price: 87.9,
   },
   {
     id: 12,
@@ -106,6 +106,6 @@ export const plantPots = [
     name: "Jardineira Flora Argila",
     description: "Vaso Plástico",
     image: flowerPlanter,
-    price: 149.9,
+    price: 99.9,
   },
 ];

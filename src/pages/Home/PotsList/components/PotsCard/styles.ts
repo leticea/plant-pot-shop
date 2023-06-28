@@ -28,21 +28,23 @@ export const PotsCardContainer = styled.li`
 `;
 
 export const Tags = styled.span`
-  max-width: 19.5rem;
+  max-width: 5rem;
   height: 2.1rem;
   display: flex;
   margin: 0 0.4rem;
   align-items: center;
   position: relative;
   padding: 0.4rem 0.8rem;
-  top: 11.2rem;
+  top: 13rem;
   border-radius: 100px;
 
   background: ${(props) => props.theme["yellow-100"]};
   color: ${(props) => props.theme["yellow-600"]};
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
+
+  //border: 1px solid blue;
 `;
 
 export const Name = styled.h1`
@@ -53,12 +55,14 @@ export const Name = styled.h1`
   position: absolute;
   left: 2rem;
   right: 2rem;
-  top: 14.9rem;
+  top: 18rem;
 
   color: ${(props) => props.theme["gray-800"]};
   font-family: "Baloo 2";
   font-size: 2rem;
   line-height: 130%;
+
+  //border: 1px solid blue;
 `;
 
 export const Description = styled.h1`
@@ -69,7 +73,7 @@ export const Description = styled.h1`
   position: absolute;
   left: 2rem;
   right: 2rem;
-  top: 18.3rem;
+  top: 22rem;
 
   color: ${(props) => props.theme["gray-600"]};
   font-family: "Roboto";
