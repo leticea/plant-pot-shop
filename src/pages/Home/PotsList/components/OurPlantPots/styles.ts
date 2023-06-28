@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const OurPlantPotsContainer = styled.h1`
-  width: 100%;
+  width: 67rem;
   margin: 10rem auto auto 16rem;
   font-family: "Baloo 2";
   font-weight: 800;
