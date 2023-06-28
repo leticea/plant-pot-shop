@@ -10,7 +10,9 @@ export const PotsCardContainer = styled.li`
   border-radius: 6px 36px;
   user-select: none;
 
-  //border: 1px solid blue;
+  box-shadow: 0.1rem 1rem 1.2rem rgba(0, 0, 0, 0.1);
+
+  //border: 2px outset ${(props) => props.theme["green-700"]};;
 
 
   img {
