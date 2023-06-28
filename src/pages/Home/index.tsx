@@ -1,4 +1,5 @@
 import { Introduction } from "./Introduction";
+import { PotsList } from "./PotsList";
 import { OurPlantPots } from "./PotsList/components/OurPlantPots";
 
 export function Home() {
@@ -6,6 +7,7 @@ export function Home() {
     <>
       <Introduction />
       <OurPlantPots />
+      <PotsList />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import plant from "../assets/plant.png";
+import roundBrown from "../assets/round-brown.avif";
 
 export const plantPots = [
   {
@@ -6,7 +6,7 @@ export const plantPots = [
     tags: ["tradicional"],
     name: "Tradicional",
     description: "Vaso tradicional",
-    image: plant,
+    image: roundBrown,
     price: 29.9,
   },
 ]

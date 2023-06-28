@@ -6,8 +6,8 @@ export function PotsList() {
   return (
     <Container>
       <List>
-        {plantPots.map((coffee) => {
-          return <PotsCard key={coffee.id} pots={pots} />;
+        {plantPots.map((pots) => {
+          return <PotsCard key={pots.id} pots={pots} />
         })}
       </List>
     </Container>

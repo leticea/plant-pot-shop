@@ -18,6 +18,9 @@ export const PotsCardContainer = styled.li`
     top: -20px;
     left: 27%;
     position: absolute;
+    mix-blend-mode: multiply;
+
+    //border: 1px solid blue;
   }
 `;
 
