@@ -37,7 +37,7 @@ export const Container = styled.div`
     &::before {
       content: "";
       position: absolute;
-      width: 159.6rem;
+      width: 156rem;
       height: 3px;
       bottom: 0;
       left: 0;
