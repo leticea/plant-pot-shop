@@ -1,5 +1,5 @@
 import { Introduction } from "./Introduction";
-import { OurPlantPots } from "./components/OurPlantPots";
+import { OurPlantPots } from "./PotsList/components/OurPlantPots";
 
 export function Home() {
   return (
