@@ -7,6 +7,8 @@ export const InfoContainer = styled.div`
   margin: -2rem 0 0 16rem;
   border-radius: 6px;
   background: ${(props) => props.theme["gray-200"]};
+
+  box-shadow: 0.1rem 0.7rem 1rem rgba(0, 0, 0, 0.1);
 `;
 
 export const Headline = styled.div`
