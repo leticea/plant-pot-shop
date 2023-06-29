@@ -1,5 +1,6 @@
 import { MapPinLine } from "@phosphor-icons/react";
 import { InfoContainer, Headline } from "./styles";
+import { AddressForm } from "../AddressForm";
 
 export function CheckoutForm() {
   return (
@@ -11,6 +12,7 @@ export function CheckoutForm() {
           </h1>
           <p>Informe o endereço onde deseja receber seu pedido</p>
         </Headline>
+        <AddressForm />
     </InfoContainer>
   )
 }
