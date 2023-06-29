@@ -6,7 +6,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <NavLink title="Home" to="/">
-        <PottedPlant size={40} weight="fill" />
+        <PottedPlant size={45} weight="fill" />
       </NavLink>
       <nav>
         <span>
