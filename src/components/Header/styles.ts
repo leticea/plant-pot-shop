@@ -48,7 +48,7 @@ export const HeaderContainer = styled.header`
       justify-content: center;
       align-items: center;
       border-radius: 6px;
-      background-color: ${(props) => props.theme["green-500"]};
+      background-color: ${(props) => props.theme["green-400"]};
 
       position: relative;
 
@@ -67,7 +67,7 @@ export const HeaderContainer = styled.header`
         position: absolute;
         top: -0.8rem;
         right: -7rem;
-        background: ${(props) => props.theme["yellow-600"]};
+        background: ${(props) => props.theme["green-800"]};
         color: ${(props) => props.theme["white"]};
         font-weight: 700;
         font-size: 1.2rem;

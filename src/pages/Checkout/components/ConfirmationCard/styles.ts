@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const Confirmation = styled.section`
-  width: 36.8rem;
+  min-width: 37rem;
   height: 9.2rem;
   display: grid;
+
+  //border: 1px solid red;
 
   p {
     display: flex;

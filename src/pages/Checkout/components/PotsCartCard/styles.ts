@@ -13,7 +13,7 @@ export const SelectedPotCard = styled.section`
   div {
     display: flex;
 
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     line-height: 130%;
     color: ${(props) => props.theme["gray-800"]};
 
@@ -33,19 +33,21 @@ export const SelectedPotCard = styled.section`
     border: 1px solid ${(props) => props.theme["gray-400"]};
   }
 
-  p {
-    min-width: 8rem;
-    height: 2.1rem;
+  .values {
+    width: 8.5rem;
+    height: 7rem;
 
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     line-height: 130%;
 
-    display: flex;
-    align-items: center;
-    text-align: right;
+    display: grid;
+    justify-items: end;
+    padding-right: 2rem;
 
     color: ${(props) => props.theme["gray-700"]};
+
+    //border: 1px solid red;
   }
 
   img {
@@ -67,7 +69,7 @@ export const ButtonsContainer = styled.section`
 `;
 
 export const RemoveButton = styled.button`
-  width: 9.1rem;
+  width: 7.2rem;
   height: 3.2rem;
   display: flex;
   justify-content: center;

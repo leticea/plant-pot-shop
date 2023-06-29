@@ -31,14 +31,16 @@ export function PotsCartCard() {
                 quantity={quantity}
               />
 
-              <RemoveButton type="button">
-                <Trash size={14} />
-                Remover
+              <RemoveButton type="button" title="Remover">
+                <Trash size={23} />
               </RemoveButton>
             </ButtonsContainer>
           </div>
         </div>
-        <p>R$ 79,90</p>
+        <div className="values">
+          <p>R$ 79,90</p>
+          <p>M</p>
+        </div>
         <hr />
       </SelectedPotCard>
     </>
