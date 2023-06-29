@@ -55,3 +55,41 @@ export const SelectedPotCard = styled.section`
     mix-blend-mode: multiply;
   }
 `;
+
+export const ButtonsContainer = styled.section`
+  display: flex;
+
+  align-items: center;
+  gap: 8px;
+
+  width: 17.1rem;
+  height: 3.2rem;
+`;
+
+export const RemoveButton = styled.button`
+  width: 9.1rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0px 8px;
+  gap: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  background: ${(props) => props.theme["gray-400"]};
+  color: ${(props) => props.theme["gray-700"]};
+  transition: all 0.2s;
+
+  svg {
+    color: ${(props) => props.theme["green-600"]};
+  }
+
+  &:hover {
+    background: ${(props) => props.theme["gray-500"]};
+  }
+`;

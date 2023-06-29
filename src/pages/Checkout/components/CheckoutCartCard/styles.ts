@@ -16,4 +16,5 @@ export const OrderCard = styled.div`
 
   border-radius: 6px 44px;
   background: ${(props) => props.theme["gray-200"]};
+  box-shadow: 0.1rem 0.7rem 1rem rgba(0, 0, 0, 0.1);
 `;
