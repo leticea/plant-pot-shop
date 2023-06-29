@@ -1,6 +1,11 @@
-import { MapPin } from "@phosphor-icons/react";
+import { CurrencyDollarSimple, MapPin, Timer } from "@phosphor-icons/react";
 import illustration from "../../assets/illustration.png";
-import { IllustrationImage, Title } from "./styles";
+import {
+  IllustrationImage,
+  Title,
+  OrderInfo,
+  OrderInfoWithIcon,
+} from "./styles";
 
 export function Success() {
   return (
@@ -15,14 +20,33 @@ export function Success() {
         </p>
       </Title>
 
-      <ul>
-        <li>
+      <OrderInfo>
+        <OrderInfoWithIcon iconColor="green">
           <MapPin size={15} weight="fill" />
           <div>
-            <p>Entrega em <strong>Rua Papagaio, 411</strong></p>
+            <p>
+              Entrega em <strong>Rua Papagaio, 411</strong>
+            </p>
+            <p>Jardins - São Paulo, SP</p>
           </div>
-        </li>
-      </ul>
+        </OrderInfoWithIcon>
+
+        <OrderInfoWithIcon iconColor="yellow">
+          <Timer size={15} weight="fill" />
+          <div>
+            <p>Previsão de entrega</p>
+            <strong>20 min - 30 min</strong>
+          </div>
+        </OrderInfoWithIcon>
+
+        <OrderInfoWithIcon iconColor="yellowDark">
+          <CurrencyDollarSimple size={15} />
+          <div>
+            <p>Pagamento na entrega</p>
+            <strong>Cartão de débito</strong>
+          </div>
+        </OrderInfoWithIcon>
+      </OrderInfo>
     </>
   );
 }
