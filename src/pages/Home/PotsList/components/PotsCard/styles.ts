@@ -14,7 +14,6 @@ export const PotsCardContainer = styled.li`
 
   //border: 2px outset ${(props) => props.theme["green-700"]};;
 
-
   img {
     width: 12rem;
     height: 12rem;

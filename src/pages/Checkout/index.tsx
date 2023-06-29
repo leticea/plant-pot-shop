@@ -1,3 +1,4 @@
+import { CheckoutCartCard } from "./components/CheckoutCartCard";
 import { CheckoutForm } from "./components/CheckoutForm";
 import { Title } from "./styles";
 
@@ -10,6 +11,7 @@ export function Checkout() {
           <h1>Produtos selecionados</h1>
         </Title>
         <CheckoutForm />
+        <CheckoutCartCard />
       </form>
     </>
   );
