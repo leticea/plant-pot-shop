@@ -1,24 +1,29 @@
 import { ButtonsContainer, RemoveButton, SelectedPotCard } from "./styles";
 import { QuantityButton } from "../../../../components/QuantityButton";
 import { Trash } from "@phosphor-icons/react";
-import { useState } from "react";
-import { CartItem } from "../../../../contexts/PotsContext";
+import { useContext } from "react";
+import { CartContext, CartItem } from "../../../../contexts/PotsContext";
+import { moneyFormat } from "../../../../utils/moneyFormat";
 
 interface PotCartCardProps {
   pot: CartItem;
 }
 
 export function PotsCartCard({ pot }: PotCartCardProps) {
-  const [quantity, setQuantity] = useState(0);
+  const { removeCartItem, changeCartItemQuantity } = useContext(CartContext);
+
+  const potsTotal = pot.price * pot.quantity;
 
   function handleIncrease() {
-    setQuantity((state) => state + 1);
+    changeCartItemQuantity(pot.id, "increase");
   }
 
   function handleDecrease() {
-    if (quantity > 0) {
-      setQuantity((state) => state - 1);
-    }
+    changeCartItemQuantity(pot.id, "decrease");
+  }
+
+  function handleRemove() {
+    removeCartItem(pot.id);
   }
 
   return (
@@ -32,17 +37,17 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
               <QuantityButton
                 onIncrease={handleIncrease}
                 onDecrease={handleDecrease}
-                quantity={quantity}
+                quantity={pot.quantity}
               />
 
-              <RemoveButton type="button" title="Remover">
+              <RemoveButton onClick={handleRemove} type="button" title="Remover">
                 <Trash size={23} />
               </RemoveButton>
             </ButtonsContainer>
           </div>
         </div>
         <div className="values">
-          <p>R$ 79,90</p>
+          <p>R$  {moneyFormat(potsTotal)}</p>
           <p>M</p>
         </div>
         <hr />
