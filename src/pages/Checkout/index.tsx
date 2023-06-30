@@ -44,7 +44,9 @@ export function Checkout() {
   const navigate = useNavigate();
 
   function confirmOrder(data: ConfirmOrderFormData) {
-    navigate("/success");
+    navigate("/success", {
+      state: data,
+    });
   }
 
   return (
