@@ -68,15 +68,10 @@ export function PotCard({ pot }: PlantPotCardProps) {
   return (
     <PotsCardContainer key={pot.id}>
       <img src={pot.image} alt="" />
-
-      {Object.entries(sizeTypes).map(([key, { label }]) => (
-        <SizesInput key={label} id={key} label={label} value={key} />
-      ))}
-
-      {/* <SizesInput Object />
-      {pot.tags.map((tag) => {
-        return <Tags key={tag}>{tag}</Tags>;
-      })} */}
+      {Object.entries(sizeTypes).map(([key, { label }]) => {
+        const potID = `${pot.id}-${label}`;
+        return <SizesInput key={potID} id={potID} label={label} value={key} />;
+      })}
       <Name>{pot.name}</Name>
       <Description>{pot.description}</Description>
       <Footer>
