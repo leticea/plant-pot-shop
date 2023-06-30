@@ -1,13 +1,13 @@
 import { plantPots } from "../../../utils/plantPots";
-import { PotsCard } from "./components/PotsCard";
+import { PotCard } from "./components/PotCard";
 import { Container, List } from "./styles";
 
 export function PotsList() {
   return (
     <Container>
       <List>
-        {plantPots.map((pots) => {
-          return <PotsCard key={pots.id} pots={pots} />
+        {plantPots.map((pot) => {
+          return <PotCard key={pot.id} pot={pot} />
         })}
       </List>
     </Container>

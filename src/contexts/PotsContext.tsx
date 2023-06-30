@@ -1,8 +1,8 @@
 import { ReactNode, createContext, useState } from "react";
-import { PlantPotsProps } from "../pages/Home/PotsList/components/PotsCard";
+import { PlantPotProps } from "../pages/Home/PotsList/components/PotCard";
 import { produce } from "immer";
 
-export interface CartItem extends PlantPotsProps {
+export interface CartItem extends PlantPotProps {
   quantity: number;
 }
 

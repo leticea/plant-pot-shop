@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { moneyFormat } from "../../../../../utils/moneyFormat";
 import {
   Button,
@@ -11,8 +11,9 @@ import {
 } from "./styles";
 import { QuantityButton } from "../../../../../components/QuantityButton";
 import { ShoppingCartSimple } from "@phosphor-icons/react";
+import { CartContext } from "../../../../../contexts/PotsContext";
 
-export interface PlantPotsProps {
+export interface PlantPotProps {
   id: number;
   tags: string[];
   name: string;
@@ -21,11 +22,12 @@ export interface PlantPotsProps {
   price: number;
 }
 
-interface PlantPotsCardProps {
-  pots: PlantPotsProps;
+interface PlantPotCardProps {
+  pot: PlantPotProps;
 }
 
-export function PotsCard({ pots }: PlantPotsCardProps) {
+export function PotCard({ pot }: PlantPotCardProps) {
+  const { addPotToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
 
   function handleIncrease() {
@@ -38,21 +40,30 @@ export function PotsCard({ pots }: PlantPotsCardProps) {
     }
   }
 
+  function addToCart() {
+    const potToAdd = {
+      ...pot,
+      quantity,
+    };
+
+    addPotToCart(potToAdd);
+  }
+
   const handleQuantity = quantity;
   const isSubmitDisabled = !handleQuantity;
 
   return (
-    <PotsCardContainer key={pots.id}>
-      <img src={pots.image} alt="" />
-      {pots.tags.map((tag) => {
+    <PotsCardContainer key={pot.id}>
+      <img src={pot.image} alt="" />
+      {pot.tags.map((tag) => {
         return <Tags key={tag}>{tag}</Tags>;
       })}
-      <Name>{pots.name}</Name>
-      <Description>{pots.description}</Description>
+      <Name>{pot.name}</Name>
+      <Description>{pot.description}</Description>
       <Footer>
         <p>
           R$
-          <span>{moneyFormat(pots.price)}</span>
+          <span>{moneyFormat(pot.price)}</span>
         </p>
         <Buttons>
           <QuantityButton
@@ -61,7 +72,7 @@ export function PotsCard({ pots }: PlantPotsCardProps) {
             quantity={quantity}
           />
         </Buttons>
-        <Button disabled={isSubmitDisabled}>
+        <Button onClick={addToCart} disabled={isSubmitDisabled}>
           <ShoppingCartSimple weight="fill" size={21} />
         </Button>
       </Footer>
