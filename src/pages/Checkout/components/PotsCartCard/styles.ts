@@ -81,7 +81,7 @@ export const RemoveButton = styled.button`
   transition: all 0.2s;
 
   svg {
-    color: ${(props) => props.theme["green-600"]};
+    color: ${(props) => props.theme["green-700"]};
   }
 
   &:hover {

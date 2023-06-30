@@ -8,8 +8,8 @@ export const PaymentMethodContainer = styled.div`
 
   input:checked + label div {
     ${(props) => css`
-      background: ${props.theme["green-400"]};
-      border-color: ${props.theme["green-600"]};
+      background: ${props.theme["green-300"]};
+      border-color: ${props.theme["green-700"]};
 
       &:hover {
         background: ${props.theme["green-400"]};
@@ -35,7 +35,7 @@ export const Content = styled.div`
   user-select: none;
 
   svg {
-    color: ${(props) => props.theme["green-600"]};
+    color: ${(props) => props.theme["green-700"]};
   }
 
   &:hover {

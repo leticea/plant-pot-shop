@@ -40,14 +40,18 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
                 quantity={pot.quantity}
               />
 
-              <RemoveButton onClick={handleRemove} type="button" title="Remover">
+              <RemoveButton
+                onClick={handleRemove}
+                type="button"
+                title="Remover"
+              >
                 <Trash size={23} />
               </RemoveButton>
             </ButtonsContainer>
           </div>
         </div>
         <div className="values">
-          <p>R$  {moneyFormat(potsTotal)}</p>
+          <p>R$ {moneyFormat(potsTotal)}</p>
           <p>M</p>
         </div>
         <hr />

@@ -33,11 +33,11 @@ export const HeaderContainer = styled.header`
       justify-content: center;
       align-items: center;
 
-      color: ${(props) => props.theme["yellow-600"]};
+      color: ${(props) => props.theme["orange-800"]};
       background-color: ${(props) => props.theme["yellow-100"]};
 
       svg {
-        color: ${(props) => props.theme["yellow-600"]};
+        color: ${(props) => props.theme["orange-800"]};
       }
     }
 
