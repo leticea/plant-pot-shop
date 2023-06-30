@@ -1,10 +1,14 @@
 import { ButtonsContainer, RemoveButton, SelectedPotCard } from "./styles";
-import beige from "../../../../assets/beige.avif";
 import { QuantityButton } from "../../../../components/QuantityButton";
 import { Trash } from "@phosphor-icons/react";
 import { useState } from "react";
+import { CartItem } from "../../../../contexts/PotsContext";
 
-export function PotsCartCard() {
+interface PotCartCardProps {
+  pot: CartItem;
+}
+
+export function PotsCartCard({ pot }: PotCartCardProps) {
   const [quantity, setQuantity] = useState(0);
 
   function handleIncrease() {
@@ -21,9 +25,9 @@ export function PotsCartCard() {
     <>
       <SelectedPotCard>
         <div>
-          <img src={beige} alt="" />
+          <img src={pot.image} alt="" />
           <div>
-            Trapezio
+            {pot.name}
             <ButtonsContainer>
               <QuantityButton
                 onIncrease={handleIncrease}
