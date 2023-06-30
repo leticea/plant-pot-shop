@@ -7,36 +7,36 @@ export function AddressForm() {
   return (
     <Container>
       <input
-            className="cep"
-            type="number"
-            placeholder="CEP"
-            {...register("cep")}
-          />
-          <input className="street" placeholder="Rua" />
+        className="cep"
+        type="number"
+        placeholder="CEP"
+        {...register("cep")}
+      />
+      <input className="street" placeholder="Rua" />
 
-          <section>
-            <input
-              className="number"
-              type="number"
-              placeholder="Número"
-            />
-            <input
-              className="complement"
-              placeholder="Complemento"
-            />
-          </section>
+      <section>
+        <input
+          className="number"
+          type="number"
+          placeholder="Número"
+          {...register("number")}
+        />
+        <input
+          className="complement"
+          placeholder="Complemento"
+          {...register("complement")}
+        />
+      </section>
 
-          <section>
-            <input
-              className="district"
-              placeholder="Bairro"
-            />
-            <input
-              className="city"
-              placeholder="Cidade"
-            />
-            <input className="state" placeholder="UF" />
-          </section>
+      <section>
+        <input
+          className="district"
+          placeholder="Bairro"
+          {...register("district")}
+        />
+        <input className="city" placeholder="Cidade" {...register("city")} />
+        <input className="state" placeholder="UF" {...register("state")} />
+      </section>
     </Container>
-  )
+  );
 }
