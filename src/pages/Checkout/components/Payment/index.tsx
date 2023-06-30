@@ -1,5 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from "@phosphor-icons/react";
-import { PaymentInfo } from "./styles";
+import { PaymentInfo, PaymentMethods } from "./styles";
 
 export const paymentMethods = {
   credit: {
@@ -25,6 +25,12 @@ export function Payment() {
           <p className="payment">Pagamento</p>
         </span>
         <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+
+        <PaymentMethods>
+          {Object.entries(paymentMethods).map(([key, { label, icon }]) => (
+            
+          ))}
+        </PaymentMethods>
       </PaymentInfo>
     </>
   );

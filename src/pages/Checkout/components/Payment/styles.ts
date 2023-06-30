@@ -46,3 +46,15 @@ export const PaymentInfo = styled.div`
     color: ${(props) => props.theme["green-600"]};
   }
 `;
+
+export const PaymentMethods = styled.section`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+
+  > p {
+    margin: auto;
+    grid-column: span 3;
+    color: ${(props) => props.theme["base-error"]};
+  }
+`;
