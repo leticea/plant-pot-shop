@@ -4,7 +4,7 @@ export const SelectedPotCard = styled.section`
   display: flex;
   align-items: flex-start;
   padding: 0.8rem 0.4rem;
-  gap: 48px;
+  gap: 30px;
 
   min-width: 36.8rem;
   height: 8rem;
@@ -12,13 +12,11 @@ export const SelectedPotCard = styled.section`
 
   div {
     display: flex;
+    min-width: 10rem;
 
     font-size: 1.7rem;
     line-height: 130%;
     color: ${(props) => props.theme["gray-800"]};
-
-    width: 255px;
-    height: 64px;
 
     div {
       gap: 0.8rem;
@@ -34,9 +32,6 @@ export const SelectedPotCard = styled.section`
   }
 
   .values {
-    width: 8.5rem;
-    height: 7rem;
-
     font-weight: 700;
     font-size: 2.6rem;
     line-height: 130%;
@@ -46,8 +41,6 @@ export const SelectedPotCard = styled.section`
     padding-right: 2rem;
 
     color: ${(props) => props.theme["gray-700"]};
-
-    //border: 1px solid red;
   }
 
   img {
