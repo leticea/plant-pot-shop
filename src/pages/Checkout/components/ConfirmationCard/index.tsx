@@ -1,22 +1,30 @@
+import { useContext } from "react";
 import { moneyFormat } from "../../../../utils/moneyFormat";
 import { Button, Confirmation } from "./styles";
+import { CartContext } from "../../../../contexts/PotsContext";
 
 export function ConfirmationCard() {
+  const { cartQuantity, totalCartItems } = useContext(CartContext);
+
   const DELIVERY_PRICE = 5;
+  const cartTotal = DELIVERY_PRICE + totalCartItems;
+
   return (
     <>
       <Confirmation>
         <p>
-          Total de itens <span>R$ 79,90</span>
+          Total de itens <span>R$ {moneyFormat(totalCartItems)}</span>
         </p>
         <p>
           Entrega <span>R$ {moneyFormat(DELIVERY_PRICE)}</span>
         </p>
         <h1>
-          Total <span>R$ 84,90</span>
+          Total <span>R$ {moneyFormat(cartTotal)}</span>
         </h1>
       </Confirmation>
-      <Button type="submit">Confirmar pedido</Button>
+      <Button type="submit" disabled={cartQuantity <= 0}>
+        Confirmar pedido
+      </Button>
     </>
   );
 }
