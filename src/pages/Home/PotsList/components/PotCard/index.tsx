@@ -7,7 +7,6 @@ import {
   Footer,
   Name,
   PotsCardContainer,
-  // Tags,
 } from "./styles";
 import { QuantityButton } from "../../../../../components/QuantityButton";
 import { ShoppingCartSimple } from "@phosphor-icons/react";
@@ -41,6 +40,8 @@ export const sizeTypes = {
 };
 
 export function PotCard({ pot }: PlantPotCardProps) {
+  const { register } = useFormContext();
+
   const { addPotToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
 
@@ -71,7 +72,15 @@ export function PotCard({ pot }: PlantPotCardProps) {
       <img src={pot.image} alt="" />
       {Object.entries(sizeTypes).map(([key, { label }]) => {
         const potID = `${pot.id}-${label}`;
-        return <SizesInput key={potID} id={potID} label={label} value={key} />;
+        return (
+          <SizesInput
+            key={potID}
+            id={potID}
+            label={label}
+            value={key}
+            {...register("sizeTypes")}
+          />
+        );
       })}
       <Name>{pot.name}</Name>
       <Description>{pot.description}</Description>

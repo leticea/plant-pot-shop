@@ -15,6 +15,12 @@ enum PaymentMethods {
   money = "money",
 }
 
+enum sizeTypes {
+  small = "small",
+  medium = "medium",
+  large = "large",
+}
+
 const confirmOrderFormValidationSchema = zod.object({
   cep: zod.string().min(1),
   street: zod.string().min(1),
@@ -26,6 +32,11 @@ const confirmOrderFormValidationSchema = zod.object({
   paymentMethod: zod.nativeEnum(PaymentMethods, {
     errorMap: () => {
       return { message: "Informe o método de pagamento" };
+    },
+  }),
+  sizeType: zod.nativeEnum(sizeTypes, {
+    errorMap: () => {
+      return { message: "Escolha o tamanho" };
     },
   }),
 });
@@ -48,6 +59,8 @@ export function Checkout() {
   const navigate = useNavigate();
 
   function confirmOrder(data: ConfirmOrderFormData) {
+    console.log(data);
+
     navigate("/success", {
       state: data,
     });

@@ -25,11 +25,11 @@ interface CartContextProviderProps {
   children: ReactNode;
 }
 
-const POTS_ITEMS_STORAGE_KEY = "plantPotShop:cartItems";
+const POTS_STORAGE_KEY = "plantPotShop:cartItems";
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    const storedCartItems = localStorage.getItem(POTS_ITEMS_STORAGE_KEY);
+    const storedCartItems = localStorage.getItem(POTS_STORAGE_KEY);
     if (storedCartItems) {
       return JSON.parse(storedCartItems);
     }
@@ -96,7 +96,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }
 
   useEffect(() => {
-    localStorage.setItem(POTS_ITEMS_STORAGE_KEY, JSON.stringify(cartItems));
+    localStorage.setItem(POTS_STORAGE_KEY, JSON.stringify(cartItems));
   }, [cartItems]);
 
   return (
