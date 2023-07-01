@@ -13,6 +13,7 @@ import { QuantityButton } from "../../../../../components/QuantityButton";
 import { ShoppingCartSimple } from "@phosphor-icons/react";
 import { CartContext } from "../../../../../contexts/PotsContext";
 import { SizesInput } from "../SizesInput";
+import { useFormContext } from "react-hook-form";
 
 export interface PlantPotProps {
   id: number;
@@ -40,6 +41,13 @@ export const sizeTypes = {
 };
 
 export function PotCard({ pot }: PlantPotCardProps) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  const sizeTypeError = errors?.sizeType?.message as unknown as string;
+
   const { addPotToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
 
@@ -70,8 +78,18 @@ export function PotCard({ pot }: PlantPotCardProps) {
       <img src={pot.image} alt="" />
       {Object.entries(sizeTypes).map(([key, { label }]) => {
         const potID = `${pot.id}-${label}`;
-        return <SizesInput key={potID} id={potID} label={label} value={key} />;
+        return (
+          <SizesInput
+            key={potID}
+            id={potID}
+            label={label}
+            value={key}
+            {...register("sizeType")}
+          />
+        );
       })}
+
+      {sizeTypeError && <p>{sizeTypeError}</p>}
       <Name>{pot.name}</Name>
       <Description>{pot.description}</Description>
       <Footer>

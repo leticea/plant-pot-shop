@@ -6,8 +6,26 @@ import {
   OrderInfo,
   OrderInfoWithIcon,
 } from "./styles";
+import { OrderData } from "../Checkout";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { sizeTypes } from "../Home/PotsList/components/PotCard";
+
+interface LocationType {
+  state: OrderData;
+}
 
 export function Success() {
+  const { state } = useLocation() as unknown as LocationType;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!state) {
+      navigate("/");
+    }
+  }, []);
+
+  if (!state) return <></>;
   return (
     <>
       <IllustrationImage>
@@ -25,9 +43,9 @@ export function Success() {
           <MapPin size={15} weight="fill" />
           <div>
             <p>
-              Entrega em <strong>Rua Papagaio, 411</strong>
+              Entrega em <strong>{state.street}, {state.number}</strong>
             </p>
-            <p>Jardins - São Paulo, SP</p>
+            <p>{state.district} - {state.city}, {state.state}</p>
           </div>
         </OrderInfoWithIcon>
 
@@ -43,7 +61,7 @@ export function Success() {
           <CurrencyDollarSimple size={15} />
           <div>
             <p>Pagamento na entrega</p>
-            <strong>Cartão de débito</strong>
+            <strong>{sizeTypes[state.sizeType].label}</strong>
           </div>
         </OrderInfoWithIcon>
       </OrderInfo>

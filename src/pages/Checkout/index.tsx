@@ -7,7 +7,7 @@ import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 
-enum PaymentMethods {
+enum Sizes {
   credit = "credit",
   debit = "debit",
   money = "money",
@@ -21,7 +21,7 @@ const confirmOrderFormValidationSchema = zod.object({
   district: zod.string().min(1),
   city: zod.string().min(1),
   state: zod.string().min(1),
-  paymentMethod: zod.nativeEnum(PaymentMethods, {
+  sizeType: zod.nativeEnum(Sizes, {
     errorMap: () => {
       return { message: "Informe o método de pagamento" };
     },
@@ -36,7 +36,7 @@ export function Checkout() {
   const confirmOrderForm = useForm<ConfirmOrderFormData>({
     resolver: zodResolver(confirmOrderFormValidationSchema),
     defaultValues: {
-      paymentMethod: undefined,
+      sizeType: undefined,
     },
   });
 

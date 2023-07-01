@@ -28,26 +28,6 @@ export const PotsCardContainer = styled.li`
   }
 `;
 
-export const Tags = styled.span`
-  max-width: 5rem;
-  height: 2.1rem;
-  display: flex;
-  margin: 0 0.4rem;
-  align-items: center;
-  position: relative;
-  padding: 0.4rem 0.8rem;
-  top: 13rem;
-  border-radius: 100px;
-
-  background: ${(props) => props.theme["yellow-100"]};
-  color: ${(props) => props.theme["yellow-600"]};
-  font-weight: 700;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-
-  //border: 1px solid blue;
-`;
-
 export const Name = styled.h1`
   display: flex;
   align-items: center;

@@ -34,8 +34,14 @@ export const Content = styled.div`
   font-weight: 700;
   font-size: 1.8rem;
   text-transform: uppercase;
+  cursor: pointer;
+  /*
+    &:hover {
+      background: ${(props) => props.theme["gray-500"]};
+    } */
+`;
 
-  /* padding: 0 1rem;
+/* padding: 0 1rem;
   margin: 3.2rem 0;
   background: ${(props) => props.theme["yellow-400"]};
   color: ${(props) => props.theme["gray-800"]};
@@ -49,8 +55,4 @@ export const Content = styled.div`
   border: 1px solid ${(props) => props.theme["gray-400"]};
   transition: 0.3s;
   user-select: none;
-
-  &:hover {
-    background: ${(props) => props.theme["gray-500"]};
-  } */
-`;
+  */
