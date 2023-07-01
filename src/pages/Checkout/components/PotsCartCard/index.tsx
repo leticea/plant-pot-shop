@@ -39,7 +39,6 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
                 onDecrease={handleDecrease}
                 quantity={pot.quantity}
               />
-
               <RemoveButton
                 onClick={handleRemove}
                 type="button"

@@ -9,7 +9,7 @@ import {
 import { OrderData } from "../Checkout";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { sizeTypes } from "../Home/PotsList/components/PotCard";
+import { paymentMethods } from "../Checkout/components/Payment";
 
 interface LocationType {
   state: OrderData;
@@ -61,7 +61,7 @@ export function Success() {
           <CurrencyDollarSimple size={15} />
           <div>
             <p>Pagamento na entrega</p>
-            <strong>{sizeTypes[state.sizeType].label}</strong>
+            <strong>{paymentMethods[state.paymentMethod].label}</strong>
           </div>
         </OrderInfoWithIcon>
       </OrderInfo>

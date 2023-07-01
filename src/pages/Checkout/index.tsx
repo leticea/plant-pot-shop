@@ -6,8 +6,10 @@ import { Title } from "./styles";
 import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/PotsContext";
 
-enum Sizes {
+enum PaymentMethods {
   credit = "credit",
   debit = "debit",
   money = "money",
@@ -21,7 +23,7 @@ const confirmOrderFormValidationSchema = zod.object({
   district: zod.string().min(1),
   city: zod.string().min(1),
   state: zod.string().min(1),
-  sizeType: zod.nativeEnum(Sizes, {
+  paymentMethod: zod.nativeEnum(PaymentMethods, {
     errorMap: () => {
       return { message: "Informe o método de pagamento" };
     },
@@ -33,10 +35,12 @@ export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>;
 type ConfirmOrderFormData = OrderData;
 
 export function Checkout() {
+  const { cleanCart } = useContext(CartContext);
+
   const confirmOrderForm = useForm<ConfirmOrderFormData>({
     resolver: zodResolver(confirmOrderFormValidationSchema),
     defaultValues: {
-      sizeType: undefined,
+      paymentMethod: undefined,
     },
   });
 
@@ -47,6 +51,8 @@ export function Checkout() {
     navigate("/success", {
       state: data,
     });
+
+    cleanCart();
   }
 
   return (
