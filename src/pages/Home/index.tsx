@@ -4,7 +4,7 @@ import { PotsList } from "./PotsList";
 import { OurPlantPots } from "./PotsList/components/OurPlantPots";
 import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { useNavigate } from "react-router-dom";
 
 export enum sizeTypes {
   small = "small",
@@ -22,25 +22,12 @@ const confirmOrderFormValidationSchema = zod.object({
 
 export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>;
 
-type ConfirmOrderFormData = OrderData;
-
 export function Home() {
-  const confirmOrderForm = useForm<ConfirmOrderFormData>({
-    resolver: zodResolver(confirmOrderFormValidationSchema),
-    defaultValues: {
-      sizeType: undefined,
-    },
-  });
-
-  const { handleSubmit } = confirmOrderForm;
-
   return (
     <>
       <Introduction />
       <OurPlantPots />
-      <FormProvider {...confirmOrderForm}>
-        <PotsList />
-      </FormProvider>
+      <PotsList />
     </>
   );
 }
