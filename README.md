@@ -11,7 +11,7 @@
   <img alt="" src=".github/image.png">
 </div>
 
-# Coffee Delivery
+# Plant-Pot-Shop
 
 ## 🚀 Tecnologias
 

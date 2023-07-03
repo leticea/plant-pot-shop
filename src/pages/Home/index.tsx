@@ -22,12 +22,33 @@ const confirmOrderFormValidationSchema = zod.object({
 
 export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>;
 
+type ConfirmOrderFormData = OrderData;
+
 export function Home() {
+  const confirmOrderForm = useForm<ConfirmOrderFormData>({
+    resolver: zodResolver(confirmOrderFormValidationSchema),
+    defaultValues: {
+      sizeType: undefined,
+    },
+  });
+
+  const { handleSubmit } = confirmOrderForm;
+  const navigate = useNavigate();
+
+
+  function confirmOrder(data: ConfirmOrderFormData) {
+    navigate("/checkout", {
+      state: data,
+    });
+  }
+
   return (
     <>
       <Introduction />
       <OurPlantPots />
-      <PotsList />
+      <FormProvider {...confirmOrderForm}>
+        <PotsList />
+      </FormProvider>
     </>
   );
 }
