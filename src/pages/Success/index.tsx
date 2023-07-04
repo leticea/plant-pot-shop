@@ -43,9 +43,14 @@ export function Success() {
           <MapPin size={15} weight="fill" />
           <div>
             <p>
-              Entrega em <strong>{state.street}, {state.number}</strong>
+              Entrega em{" "}
+              <strong>
+                {state.street}, {state.number}
+              </strong>
             </p>
-            <p>{state.district} - {state.city}, {state.state}</p>
+            <p>
+              {state.district} - {state.city}, {state.state}
+            </p>
           </div>
         </OrderInfoWithIcon>
 

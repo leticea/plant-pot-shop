@@ -4,21 +4,12 @@ import { Trash } from "@phosphor-icons/react";
 import { useContext } from "react";
 import { CartContext, CartItem } from "../../../../contexts/PotsContext";
 import { moneyFormat } from "../../../../utils/moneyFormat";
-import { sizeTypes } from "../../../Home/PotsList/components/PotCard";
-import { useLocation } from "react-router-dom";
-import { OrderData } from "../..";
 
 interface PotCartCardProps {
   pot: CartItem;
 }
 
-interface LocationType {
-  state: OrderData;
-}
-
 export function PotsCartCard({ pot }: PotCartCardProps) {
-  const { state } = useLocation() as unknown as LocationType;
-
   const { removeCartItem, changeCartItemQuantity } = useContext(CartContext);
 
   const potsTotal = pot.price * pot.quantity;
@@ -60,7 +51,7 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
         </div>
         <div className="values">
           <p>R$ {moneyFormat(potsTotal)}</p>
-          <p>{sizeTypes[state.sizeType].label}</p>
+          <p>M</p>
         </div>
         <hr />
       </SelectedPotCard>

@@ -7,12 +7,13 @@ import {
   Footer,
   Name,
   PotsCardContainer,
+  // Tags,
 } from "./styles";
 import { QuantityButton } from "../../../../../components/QuantityButton";
 import { ShoppingCartSimple } from "@phosphor-icons/react";
 import { CartContext } from "../../../../../contexts/PotsContext";
 import { SizesInput } from "../SizesInput";
-import { useFormContext } from "react-hook-form";
+import { SizeTypes } from "../../../../../components/SizeTypes";
 
 export interface PlantPotProps {
   id: number;
@@ -27,21 +28,19 @@ interface PlantPotCardProps {
   pot: PlantPotProps;
 }
 
-export const sizeTypes = {
-  small: {
-    label: "P",
-  },
-  medium: {
-    label: "M",
-  },
-  large: {
-    label: "G",
-  },
-};
+// export const sizeTypes = {
+//   small: {
+//     label: "P",
+//   },
+//   medium: {
+//     label: "M",
+//   },
+//   large: {
+//     label: "G",
+//   },
+// };
 
 export function PotCard({ pot }: PlantPotCardProps) {
-  const { register } = useFormContext();
-
   const { addPotToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
 
@@ -70,18 +69,11 @@ export function PotCard({ pot }: PlantPotCardProps) {
   return (
     <PotsCardContainer key={pot.id}>
       <img src={pot.image} alt="" />
-      {Object.entries(sizeTypes).map(([key, { label }]) => {
+      {/* {Object.entries(sizeTypes).map(([key, { label }]) => {
         const potID = `${pot.id}-${label}`;
-        return (
-          <SizesInput
-            key={potID}
-            id={potID}
-            label={label}
-            value={key}
-            {...register("sizeTypes")}
-          />
-        );
-      })}
+        return <SizesInput key={potID} id={potID} label={label} value={key} />;
+      })} */}
+      <SizeTypes />
       <Name>{pot.name}</Name>
       <Description>{pot.description}</Description>
       <Footer>

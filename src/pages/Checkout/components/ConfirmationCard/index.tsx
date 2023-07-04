@@ -1,7 +1,7 @@
 import { useContext } from "react";
+import { CartContext } from "../../../../contexts/PotsContext";
 import { moneyFormat } from "../../../../utils/moneyFormat";
 import { Button, Confirmation } from "./styles";
-import { CartContext } from "../../../../contexts/PotsContext";
 
 export function ConfirmationCard() {
   const { cartQuantity, totalCartItems } = useContext(CartContext);

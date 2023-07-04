@@ -12,7 +12,7 @@ export function AddressForm() {
         placeholder="CEP"
         {...register("cep")}
       />
-      <input className="street" placeholder="Rua" />
+      <input className="street" placeholder="Rua" {...register("street")} />
 
       <section>
         <input
