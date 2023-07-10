@@ -26,6 +26,7 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
     removeCartItem(pot.id);
   }
 
+  console.log(pot);
   return (
     <>
       <SelectedPotCard>
@@ -51,7 +52,7 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
         </div>
         <div className="values">
           <p>R$ {moneyFormat(potsTotal)}</p>
-          <p>M</p>
+          <p>{pot.label}</p>
         </div>
         <hr />
       </SelectedPotCard>

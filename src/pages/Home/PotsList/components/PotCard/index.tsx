@@ -41,6 +41,7 @@ export const sizeTypes = {
 export function PotCard({ pot }: PlantPotCardProps) {
   const { addPotToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
+  const [label, setLabel] = useState("");
 
   function handleIncrease() {
     setQuantity((state) => state + 1);
@@ -52,24 +53,31 @@ export function PotCard({ pot }: PlantPotCardProps) {
     }
   }
 
+  function handleLabel(labelParameter: string) {
+    setLabel(labelParameter);
+  }
+
   function addToCart() {
     const potToAdd = {
       ...pot,
       quantity,
+      label,
     };
 
     addPotToCart(potToAdd);
   }
 
+
   const handleQuantity = quantity;
-  const isSubmitDisabled = !handleQuantity;
+
+  const isSubmitDisabled = handleQuantity === 0 || label === "";
 
   return (
     <PotsCardContainer key={pot.id}>
       <img src={pot.image} alt="" />
       {Object.entries(sizeTypes).map(([key, { label }]) => {
         const potID = `${pot.id}-${label}`;
-        return <SizesInput key={potID} id={potID} label={label} value={key} />;
+        return <SizesInput key={potID} id={potID} label={label} value={key} handleLabel={handleLabel} />;
       })}
       <Name>{pot.name}</Name>
       <Description>{pot.description}</Description>

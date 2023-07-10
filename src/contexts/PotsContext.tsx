@@ -4,6 +4,7 @@ import { PlantPotProps } from "../pages/Home/PotsList/components/PotCard";
 
 export interface CartItem extends PlantPotProps {
   quantity: number;
+  label: string;
 }
 
 interface CartContextType {
@@ -17,6 +18,7 @@ interface CartContextType {
   ) => void;
   removeCartItem: (cartItemId: number) => void;
   cleanCart: () => void;
+  addSizeTypeItem: (cartItemId: number, type: "P" | "M" | "G") => void;
 }
 
 export const CartContext = createContext({} as CartContextType);
@@ -49,9 +51,20 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     const newOrder = produce(cartItems, (draft) => {
       if (potAlreadyExistsInCart < 0) {
+        pot.price = calculatePrice(pot.label, pot.price);
+
         draft.push(pot);
       } else {
+        console.log("aqui2");
+        console.log(pot.price);
+        console.log(calculatePrice(pot.label, pot.price));
+        console.log(pot.quantity);
         draft[potAlreadyExistsInCart].quantity += pot.quantity;
+        draft[potAlreadyExistsInCart].label = pot.label;
+        draft[potAlreadyExistsInCart].price = calculatePrice(
+          pot.label,
+          pot.price
+        );
       }
     });
 
@@ -70,7 +83,35 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       if (potExistsInCart >= 0) {
         const item = draft[potExistsInCart];
         draft[potExistsInCart].quantity =
-          type === "increase" ? item.quantity + 1 : item.quantity - 1;
+          type === "increase" ? item.price + 1 : item.quantity - 1;
+      }
+    });
+
+    setCartItems(newOrder);
+  }
+
+  function calculatePrice(type: string, price: number): number {
+    if (type === "M") {
+      return price + (price * 5) / 100;
+    } else if (type === "G") {
+      return price + (price * 10) / 100;
+    }
+
+    return price;
+  }
+
+  function addSizeTypeItem(cartItemId: number, type: "P" | "M" | "G") {
+    const newOrder = produce(cartItems, (draft) => {
+      const potExistsInCart = cartItems.findIndex(
+        (cartItem) => cartItem.id === cartItemId
+      );
+
+      console.log(type);
+
+      if (potExistsInCart >= 0) {
+        const item = draft[potExistsInCart];
+        draft[potExistsInCart].label = type;
+        draft[potExistsInCart].price = calculatePrice(type, item.price);
       }
     });
 
@@ -109,6 +150,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         changeCartItemQuantity,
         removeCartItem,
         cleanCart,
+        addSizeTypeItem,
       }}
     >
       {children}
