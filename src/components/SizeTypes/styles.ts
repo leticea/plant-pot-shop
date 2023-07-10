@@ -39,10 +39,12 @@ export const Content = styled.div`
   font-weight: 700;
   font-size: 2.5rem;
   text-transform: uppercase;
-  cursor: pointer;
 
+  &:hover {
+    background: ${(props) => props.theme["green-500"]};
+  }
 
-    &:hover {
-      background: ${(props) => props.theme["green-500"]};
-    }
+  label {
+    cursor: pointer;
+  }
 `;

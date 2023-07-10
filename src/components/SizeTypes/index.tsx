@@ -8,7 +8,7 @@ export function SizeTypes() {
         <label htmlFor="small">P</label>
       </Content>
       <Content>
-        <input type="radio" name="medium" id="medium" />
+        <input type="radio" name="medium" id="medium" checked />
         <label htmlFor="medium">M</label>
       </Content>
       <Content>

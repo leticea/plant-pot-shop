@@ -24,4 +24,4 @@ export const defaultTheme = {
   "yellow-600": "#C47F17",
 
   "orange-800": "#9a3412",
-};
+} as const;

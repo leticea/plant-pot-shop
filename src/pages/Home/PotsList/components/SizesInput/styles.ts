@@ -8,37 +8,38 @@ export const SizeTypesContainer = styled.div`
 
   input:checked + label div {
     ${(props) => css`
-      background: ${props.theme["yellow-400"]};
-      border-color: ${props.theme["yellow-600"]};
+      background: ${props.theme["green-300"]};
+      border-color: ${props.theme["green-700"]};
 
       &:hover {
-        background: ${props.theme["yellow-100"]};
+        background: ${props.theme["green-600"]};
       }
     `}
   }
 `;
 
 export const Content = styled.div`
-  max-width: 5rem;
-  height: 2.1rem;
+  width: 4rem;
+  height: 3rem;
   display: flex;
-  margin: 0 0.4rem;
   align-items: center;
+  justify-content: center;
+  margin: 0 0.4rem;
   position: relative;
   padding: 0.4rem 0.8rem;
   top: 13rem;
   border-radius: 100px;
 
-  background: ${(props) => props.theme["yellow-100"]};
-  color: ${(props) => props.theme["yellow-600"]};
+  background: ${(props) => props.theme["gray-400"]};
+  color: ${(props) => props.theme["gray-900"]};
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   cursor: pointer;
-  /*
-    &:hover {
-      background: ${(props) => props.theme["gray-500"]};
-    } */
+
+  &:hover {
+    background: ${(props) => props.theme["green-500"]};
+  }
 `;
 
 /* padding: 0 1rem;
