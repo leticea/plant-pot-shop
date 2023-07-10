@@ -59,31 +59,13 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         console.log(pot.price);
         console.log(calculatePrice(pot.label, pot.price));
         console.log(pot.quantity);
+
         draft[potAlreadyExistsInCart].quantity += pot.quantity;
         draft[potAlreadyExistsInCart].label = pot.label;
         draft[potAlreadyExistsInCart].price = calculatePrice(
           pot.label,
           pot.price
         );
-      }
-    });
-
-    setCartItems(newOrder);
-  }
-
-  function changeCartItemQuantity(
-    cartItemId: number,
-    type: "increase" | "decrease"
-  ) {
-    const newOrder = produce(cartItems, (draft) => {
-      const potExistsInCart = cartItems.findIndex(
-        (cartItem) => cartItem.id === cartItemId
-      );
-
-      if (potExistsInCart >= 0) {
-        const item = draft[potExistsInCart];
-        draft[potExistsInCart].quantity =
-          type === "increase" ? item.price + 1 : item.quantity - 1;
       }
     });
 
@@ -112,6 +94,25 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         const item = draft[potExistsInCart];
         draft[potExistsInCart].label = type;
         draft[potExistsInCart].price = calculatePrice(type, item.price);
+      }
+    });
+
+    setCartItems(newOrder);
+  }
+
+  function changeCartItemQuantity(
+    cartItemId: number,
+    type: "increase" | "decrease"
+  ) {
+    const newOrder = produce(cartItems, (draft) => {
+      const potExistsInCart = cartItems.findIndex(
+        (cartItem) => cartItem.id === cartItemId
+      );
+
+      if (potExistsInCart >= 0) {
+        const item = draft[potExistsInCart];
+        draft[potExistsInCart].quantity =
+          type === "increase" ? item.quantity + 1 : item.quantity - 1;
       }
     });
 

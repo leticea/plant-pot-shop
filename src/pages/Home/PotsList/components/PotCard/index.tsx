@@ -67,10 +67,8 @@ export function PotCard({ pot }: PlantPotCardProps) {
     addPotToCart(potToAdd);
   }
 
-
-  const handleQuantity = quantity;
-
-  const isSubmitDisabled = handleQuantity === 0 || label === "";
+  // const handleQuantity = quantity;
+  const isSubmitDisabled = quantity === 0 || label === "";
 
   return (
     <PotsCardContainer key={pot.id}>

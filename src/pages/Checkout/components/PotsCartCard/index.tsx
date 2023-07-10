@@ -26,7 +26,6 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
     removeCartItem(pot.id);
   }
 
-  console.log(pot);
   return (
     <>
       <SelectedPotCard>
