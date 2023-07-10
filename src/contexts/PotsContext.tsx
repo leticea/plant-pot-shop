@@ -18,7 +18,7 @@ interface CartContextType {
   ) => void;
   removeCartItem: (cartItemId: number) => void;
   cleanCart: () => void;
-  addSizeTypeItem: (cartItemId: number, type: "P" | "M" | "G") => void;
+  addItemSizeType: (cartItemId: number, type: "P" | "M" | "G") => void;
 }
 
 export const CartContext = createContext({} as CartContextType);
@@ -46,7 +46,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
   function addPotToCart(pot: CartItem) {
     const potAlreadyExistsInCart = cartItems.findIndex(
-      (cartItem) => cartItem.id === pot.id
+      (cartItem) => cartItem.id === pot.id && cartItem.label === pot.label
     );
 
     const newOrder = produce(cartItems, (draft) => {
@@ -55,7 +55,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
         draft.push(pot);
       } else {
-        console.log("aqui2");
         console.log(pot.price);
         console.log(calculatePrice(pot.label, pot.price));
         console.log(pot.quantity);
@@ -82,7 +81,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     return price;
   }
 
-  function addSizeTypeItem(cartItemId: number, type: "P" | "M" | "G") {
+  function addItemSizeType(cartItemId: number, type: "P" | "M" | "G") {
     const newOrder = produce(cartItems, (draft) => {
       const potExistsInCart = cartItems.findIndex(
         (cartItem) => cartItem.id === cartItemId
@@ -151,7 +150,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         changeCartItemQuantity,
         removeCartItem,
         cleanCart,
-        addSizeTypeItem,
+        addItemSizeType,
       }}
     >
       {children}
