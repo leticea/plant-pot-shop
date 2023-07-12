@@ -67,9 +67,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         pot.price = calculatePrice(pot.label, pot.price);
         draft.push(pot);
       } else {
-        // console.log(calculatePrice(pot.label, pot.price));
-        // console.log(pot.quantity);
-
         draft[potAlreadyExistsInCart].quantity += pot.quantity;
         draft[potAlreadyExistsInCart].label = pot.label;
         draft[potAlreadyExistsInCart].price = calculatePrice(

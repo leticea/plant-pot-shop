@@ -57,16 +57,18 @@ export function PotCard({ pot }: PlantPotCardProps) {
   }
 
   function addToCart() {
+    const cartItemID = `${pot.id}-${label}`;
+    
     const potToAdd = {
       ...pot,
       quantity,
       label,
+      cartItemID
     };
 
     addPotToCart(potToAdd);
   }
 
-  // const handleQuantity = quantity;
   const isSubmitDisabled = quantity === 0 || label === "";
 
   return (
