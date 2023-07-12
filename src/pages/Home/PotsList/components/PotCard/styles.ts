@@ -21,8 +21,6 @@ export const PotsCardContainer = styled.li`
     left: 27%;
     position: absolute;
     mix-blend-mode: multiply;
-
-    /* border: 1px solid blue; */
   }
 `;
 
