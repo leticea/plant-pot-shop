@@ -15,7 +15,6 @@ import { SizesInput } from "../SizesInput";
 
 export interface PlantPotProps {
   id: number;
-  tags: string[];
   name: string;
   image: string;
   description: string;

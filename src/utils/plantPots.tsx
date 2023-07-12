@@ -14,7 +14,6 @@ import flowerPlanter from "../assets/flower-planter.avif";
 export const plantPots = [
   {
     id: 1,
-    tags: ["P", "M", "G"],
     name: "Verona Antique",
     description: "Vaso Plástico",
     image: roundBeige,
@@ -22,7 +21,6 @@ export const plantPots = [
   },
   {
     id: 2,
-    tags: ["P", "M", "G"],
     name: "Malta Cone Rusty",
     description: "Vaso Plástico",
     image: roundBrown,
@@ -30,7 +28,6 @@ export const plantPots = [
   },
   {
     id: 3,
-    tags: ["P", "M", "G"],
     name: "Malta Cone Granito",
     description: "Vaso Plástico",
     image: sand,
@@ -38,7 +35,6 @@ export const plantPots = [
   },
   {
     id: 4,
-    tags: ["P", "M", "G"],
     name: "Malta Cone Pedra",
     description: "Vaso Plástico",
     image: stone,
@@ -46,7 +42,6 @@ export const plantPots = [
   },
   {
     id: 5,
-    tags: ["P", "M", "G"],
     name: "Malta Redondo Rusty",
     description: "Vaso Plástico",
     image: round,
@@ -54,7 +49,6 @@ export const plantPots = [
   },
   {
     id: 6,
-    tags: ["P", "M", "G"],
     name: "Malta Redondo Pedra",
     description: "Vaso Plástico",
     image: roundStone,
@@ -62,7 +56,6 @@ export const plantPots = [
   },
   {
     id: 7,
-    tags: ["P", "M", "G"],
     name: "Iguatemi Rusty",
     description: "Vaso Plástico",
     image: iguatemi,
@@ -70,7 +63,6 @@ export const plantPots = [
   },
   {
     id: 8,
-    tags: ["P", "M", "G"],
     name: "Flora Argila",
     description: "Vaso Plástico",
     image: flower,
@@ -78,7 +70,6 @@ export const plantPots = [
   },
   {
     id: 9,
-    tags: ["P", "M", "G"],
     name: "Malta Trapézio Pedra",
     description: "Vaso Plástico",
     image: trapeze,
@@ -86,7 +77,6 @@ export const plantPots = [
   },
   {
     id: 10,
-    tags: ["P", "M", "G"],
     name: "Malta Trapézio Rusty",
     description: "Vaso Plástico",
     image: brownTrapeze,
@@ -94,7 +84,6 @@ export const plantPots = [
   },
   {
     id: 11,
-    tags: ["P", "M", "G"],
     name: "Malta Trapézio Areia",
     description: "Vaso Plástico",
     image: sandTrapeze,
@@ -102,7 +91,6 @@ export const plantPots = [
   },
   {
     id: 12,
-    tags: ["P", "M", "G"],
     name: "Jardineira Flora Argila",
     description: "Vaso Plástico",
     image: flowerPlanter,

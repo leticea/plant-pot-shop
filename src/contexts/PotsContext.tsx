@@ -3,6 +3,7 @@ import { produce } from "immer";
 import { PlantPotProps } from "../pages/Home/PotsList/components/PotCard";
 
 export interface CartItem extends PlantPotProps {
+  cartItemID: string;
   quantity: number;
   label: string;
 }
@@ -12,13 +13,13 @@ interface CartContextType {
   cartQuantity: number;
   totalCartItems: number;
   addPotToCart: (pot: CartItem) => void;
+  addItemSizeType: (cartItemId: number, type: "P" | "M" | "G") => void;
   changeCartItemQuantity: (
-    cartItemId: number,
+    cartItemId: string,
     type: "increase" | "decrease"
   ) => void;
   removeCartItem: (cartItemId: number) => void;
   cleanCart: () => void;
-  addItemSizeType: (cartItemId: number, type: "P" | "M" | "G") => void;
 }
 
 export const CartContext = createContext({} as CartContextType);
@@ -44,6 +45,16 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     return total + cartItem.price * cartItem.quantity;
   }, 0);
 
+  function calculatePrice(type: string, price: number): number {
+    if (type === "M") {
+      return price + (price * 5) / 100;
+    } else if (type === "G") {
+      return price + (price * 10) / 100;
+    }
+
+    return price;
+  }
+
   function addPotToCart(pot: CartItem) {
     const potAlreadyExistsInCart = cartItems.findIndex(
       (cartItem) => cartItem.id === pot.id && cartItem.label === pot.label
@@ -51,13 +62,13 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     const newOrder = produce(cartItems, (draft) => {
       if (potAlreadyExistsInCart < 0) {
-        pot.price = calculatePrice(pot.label, pot.price);
+        pot.cartItemID = `${pot.id}-${pot.label}`;
 
+        pot.price = calculatePrice(pot.label, pot.price);
         draft.push(pot);
       } else {
-        console.log(pot.price);
-        console.log(calculatePrice(pot.label, pot.price));
-        console.log(pot.quantity);
+        // console.log(calculatePrice(pot.label, pot.price));
+        // console.log(pot.quantity);
 
         draft[potAlreadyExistsInCart].quantity += pot.quantity;
         draft[potAlreadyExistsInCart].label = pot.label;
@@ -71,23 +82,11 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(newOrder);
   }
 
-  function calculatePrice(type: string, price: number): number {
-    if (type === "M") {
-      return price + (price * 5) / 100;
-    } else if (type === "G") {
-      return price + (price * 10) / 100;
-    }
-
-    return price;
-  }
-
   function addItemSizeType(cartItemId: number, type: "P" | "M" | "G") {
     const newOrder = produce(cartItems, (draft) => {
       const potExistsInCart = cartItems.findIndex(
         (cartItem) => cartItem.id === cartItemId
       );
-
-      console.log(type);
 
       if (potExistsInCart >= 0) {
         const item = draft[potExistsInCart];
@@ -100,20 +99,29 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }
 
   function changeCartItemQuantity(
-    cartItemId: number,
+    cartItemId: string,
     type: "increase" | "decrease"
   ) {
+
+
     const newOrder = produce(cartItems, (draft) => {
+      console.log(cartItems[0].cartItemID === cartItemId)
+      console.log(cartItemId)
+
       const potExistsInCart = cartItems.findIndex(
-        (cartItem) => cartItem.id === cartItemId
+        (cartItem) => cartItem.cartItemID === cartItemId
       );
+
 
       if (potExistsInCart >= 0) {
         const item = draft[potExistsInCart];
+
         draft[potExistsInCart].quantity =
           type === "increase" ? item.quantity + 1 : item.quantity - 1;
       }
     });
+
+
 
     setCartItems(newOrder);
   }

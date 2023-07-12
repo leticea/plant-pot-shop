@@ -15,11 +15,13 @@ export function PotsCartCard({ pot }: PotCartCardProps) {
   const potsTotal = pot.price * pot.quantity;
 
   function handleIncrease() {
-    changeCartItemQuantity(pot.id, "increase");
+    changeCartItemQuantity(pot.cartItemID, "increase");
   }
 
   function handleDecrease() {
-    changeCartItemQuantity(pot.id, "decrease");
+    if (pot.quantity > 0) {
+      changeCartItemQuantity(pot.cartItemID, "decrease");
+    }
   }
 
   function handleRemove() {
