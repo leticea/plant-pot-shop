@@ -26,12 +26,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Styled Components](https://styled-components.com/) - ^5.3.9
 - [Phosphor Icons](https://phosphoricons.com/)
 - [Zod](https://zod.dev/) - ^3.21.4
+- [Immer](https://immerjs.github.io/immer/) - ^10.0.2"
 
 ## 💻 Projeto
 
-Projeto de Front-end de React de uma cafeteria onde há a listagem de produtos disponíveis para compra, a adição de uma quantidade específica de itens no carrinho, a remoção da quantidade de itens no carrinho, a exibição do valor total da compra e um formulário para o usuário preencher o seu endereço.
-
-- Módulo ReactJS do Ignite na plataforma da [Rocketseat](https://www.rocketseat.com.br/).
+Projeto de Front-end de React de uma loja de vaso de plantas onde há a listagem de produtos disponíveis para compra, a adição de uma quantidade específica de itens no carrinho, a escolha do tamanho do produto, o valor do produto de acordo com o seu tamanho (se for M é 5% a mais e se for G é 10% a mais em cima do valor atual), a remoção da quantidade de itens no carrinho, a exibição do valor total da compra e um formulário para o usuário preencher o seu endereço de entrega.
 
 <div align="center">
   <img alt="" src=".github/image2.png">
@@ -39,10 +38,6 @@ Projeto de Front-end de React de uma cafeteria onde há a listagem de produtos d
 
 <div align="center">
   <img alt="" src=".github/image3.png">
-</div>
-
-<div align="center">
-  <img alt="" src=".github/image4.png">
 </div>
 
 ## ⚙️ Como Rodar
