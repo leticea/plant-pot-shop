@@ -21,14 +21,12 @@ export const Title = styled.div`
     font-weight: 800;
     font-size: 3.2rem;
     line-height: 130%;
-
     color: ${(props) => props.theme["yellow-600"]};
   }
 
   .normal {
     font-size: 2rem;
     line-height: 180%;
-
     color: ${(props) => props.theme["gray-800"]};
   }
 `;
@@ -36,15 +34,12 @@ export const Title = styled.div`
 export const OrderInfo = styled.ul`
   width: 52.6rem;
   height: 27rem;
-
   margin-top: 19.2rem;
   margin-left: 16rem;
-
   padding: 4rem;
   border-radius: 6px 36px;
 
   position: relative;
-
   display: flex;
   flex-direction: column;
 
@@ -108,7 +103,6 @@ export const OrderInfoWithIcon = styled.li<OrderInfoWithIconProps>`
     padding: 0.8rem;
     padding: 0.8rem;
     border-radius: 9999px;
-
     background: ${(props) => props.theme[ICON_COLORS[props.iconColor]]};
     color: ${(props) => props.theme["gray-100"]};
   }

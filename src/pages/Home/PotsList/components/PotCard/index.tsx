@@ -63,7 +63,7 @@ export function PotCard({ pot }: PlantPotCardProps) {
       ...pot,
       quantity,
       label,
-      cartItemID
+      cartItemID,
     };
 
     addPotToCart(potToAdd);
@@ -76,7 +76,15 @@ export function PotCard({ pot }: PlantPotCardProps) {
       <img src={pot.image} alt="" />
       {Object.entries(sizeTypes).map(([key, { label }]) => {
         const potID = `${pot.id}-${label}`;
-        return <SizesInput key={potID} id={potID} label={label} value={key} handleLabel={handleLabel} />;
+        return (
+          <SizesInput
+            key={potID}
+            id={potID}
+            label={label}
+            value={key}
+            handleLabel={handleLabel}
+          />
+        );
       })}
       <Name>{pot.name}</Name>
       <Description>{pot.description}</Description>

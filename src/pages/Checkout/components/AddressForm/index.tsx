@@ -13,7 +13,6 @@ export function AddressForm() {
         {...register("cep")}
       />
       <input className="street" placeholder="Rua" {...register("street")} />
-
       <section>
         <input
           className="number"
@@ -27,7 +26,6 @@ export function AddressForm() {
           {...register("complement")}
         />
       </section>
-
       <section>
         <input
           className="district"

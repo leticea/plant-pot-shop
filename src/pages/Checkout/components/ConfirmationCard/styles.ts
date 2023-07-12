@@ -5,8 +5,6 @@ export const Confirmation = styled.section`
   height: 9.2rem;
   display: grid;
 
-  //border: 1px solid red;
-
   p {
     display: flex;
     justify-content: space-between;
@@ -44,21 +42,24 @@ export const Button = styled.button`
   height: 4.6rem;
   padding: 1.2rem 0.8rem;
   margin-top: 2.4rem;
-
   border: none;
   cursor: pointer;
   border-radius: 6px;
-
-  background: ${(props) => props.theme["yellow-400"]};
 
   font-weight: 700;
   font-size: 1.4rem;
   text-transform: uppercase;
 
+  background: ${(props) => props.theme["yellow-400"]};
   color: ${(props) => props.theme["white"]};
   transition: all 0.2s;
 
   &:hover {
     background: ${(props) => props.theme["yellow-600"]};
+  }
+
+  &:disabled {
+    background: ${(props) => props.theme["yellow-400"]};
+    cursor: not-allowed;
   }
 `;

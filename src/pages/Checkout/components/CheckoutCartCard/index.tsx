@@ -11,7 +11,7 @@ export function CheckoutCartCard() {
   return (
     <>
       <OrderCard>
-      {cartItems.length !== 0 ? (
+        {cartItems.length !== 0 ? (
           cartItems.map((pot) => (
             <PotsCartCard key={pot.cartItemID} pot={pot} />
           ))

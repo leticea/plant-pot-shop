@@ -1,4 +1,9 @@
-import { ArrowsOutCardinal, Plant, ShoppingCart, Timer } from "@phosphor-icons/react";
+import {
+  ArrowsOutCardinal,
+  Plant,
+  ShoppingCart,
+  Timer,
+} from "@phosphor-icons/react";
 import { Container, InfoGrid, InfoWithIcon } from "./styles";
 
 export function Introduction() {

@@ -8,6 +8,4 @@ export const OurPlantPotsContainer = styled.h1`
   font-size: 3.2rem;
   line-height: 130%;
   color: ${(props) => props.theme["gray-800"]};
-
-  //border: 1px solid blue;
 `;

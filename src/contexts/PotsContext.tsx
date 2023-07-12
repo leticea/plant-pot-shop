@@ -99,26 +99,20 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     cartItemId: string,
     type: "increase" | "decrease"
   ) {
-
-
     const newOrder = produce(cartItems, (draft) => {
-      console.log(cartItems[0].cartItemID === cartItemId)
-      console.log(cartItemId)
+      console.log(cartItems[0].cartItemID === cartItemId);
+      console.log(cartItemId);
 
       const potExistsInCart = cartItems.findIndex(
         (cartItem) => cartItem.cartItemID === cartItemId
       );
 
-
       if (potExistsInCart >= 0) {
         const item = draft[potExistsInCart];
-
         draft[potExistsInCart].quantity =
           type === "increase" ? item.quantity + 1 : item.quantity - 1;
       }
     });
-
-
 
     setCartItems(newOrder);
   }

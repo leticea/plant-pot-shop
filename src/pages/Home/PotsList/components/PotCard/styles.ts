@@ -12,19 +12,17 @@ export const PotsCardContainer = styled.li`
 
   box-shadow: 0.1rem 1rem 1.2rem rgba(0, 0, 0, 0.1);
 
-  //border: 2px outset ${(props) => props.theme["green-700"]};;
-
   img {
     width: 12rem;
     height: 12rem;
     display: flex;
     justify-content: center;
-    top: -6px;
+    top: 5px;
     left: 27%;
     position: absolute;
     mix-blend-mode: multiply;
 
-    //border: 1px solid blue;
+    /* border: 1px solid blue; */
   }
 `;
 
@@ -36,14 +34,12 @@ export const Name = styled.h1`
   position: absolute;
   left: 2rem;
   right: 2rem;
-  top: 18rem;
+  top: 20rem;
 
   color: ${(props) => props.theme["gray-800"]};
   font-family: "Baloo 2";
   font-size: 2rem;
   line-height: 130%;
-
-  //border: 1px solid blue;
 `;
 
 export const Description = styled.h1`
@@ -54,15 +50,13 @@ export const Description = styled.h1`
   position: absolute;
   left: 2rem;
   right: 2rem;
-  top: 22rem;
+  top: 23rem;
 
   color: ${(props) => props.theme["gray-600"]};
   font-family: "Roboto";
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 130%;
-
-  //border: 1px solid blue;
 `;
 
 export const Footer = styled.div`
@@ -107,8 +101,7 @@ export const Buttons = styled.div`
   align-items: center;
   gap: 0.8rem;
   border-radius: 6px;
-
-  margin: 0 0 0 16px;
+  margin-left: 16px;
 
   font-weight: 400;
   font-size: 1.6rem;

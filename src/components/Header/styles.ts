@@ -28,7 +28,6 @@ export const HeaderContainer = styled.header`
       font-size: 1.4rem;
       border-radius: 6px;
       gap: 0.4rem;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -49,7 +48,6 @@ export const HeaderContainer = styled.header`
       align-items: center;
       border-radius: 6px;
       background-color: ${(props) => props.theme["green-400"]};
-
       position: relative;
 
       svg {

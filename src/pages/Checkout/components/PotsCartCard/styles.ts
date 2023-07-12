@@ -2,21 +2,17 @@ import styled from "styled-components";
 
 export const SelectedPotCard = styled.section`
   display: flex;
-  align-items: flex-start;
-  padding: 0.8rem 0.4rem;
-  gap: 30px;
-
-  min-width: 36.8rem;
-  height: 8rem;
-  margin-bottom: 2.4rem;
+  min-width: 37rem;
+  min-height: 8rem;
+  margin-bottom: 2rem;
 
   div {
     display: flex;
-    min-width: 10rem;
-
+    min-width: 12rem;
     font-size: 1.7rem;
     line-height: 130%;
     color: ${(props) => props.theme["gray-800"]};
+    padding: 0.8rem 0.4rem;
 
     div {
       gap: 0.8rem;
@@ -26,25 +22,23 @@ export const SelectedPotCard = styled.section`
 
   hr {
     position: absolute;
-    margin: 9.6rem 0;
+    margin: 11.7rem 0;
     width: 36.8rem;
     border: 1px solid ${(props) => props.theme["gray-400"]};
   }
 
   .values {
     font-weight: 700;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     line-height: 130%;
-
     display: grid;
     justify-items: end;
-    padding-right: 2rem;
-
+    padding-right: 1rem;
     color: ${(props) => props.theme["gray-700"]};
   }
 
   img {
-    margin: auto 2rem auto 0;
+    margin-right: 1.5rem;
     width: 6.4rem;
     height: 6.4rem;
     mix-blend-mode: multiply;
@@ -53,10 +47,8 @@ export const SelectedPotCard = styled.section`
 
 export const ButtonsContainer = styled.section`
   display: flex;
-
   align-items: center;
   gap: 8px;
-
   width: 17.1rem;
   height: 3.2rem;
 `;
@@ -75,7 +67,6 @@ export const RemoveButton = styled.button`
 
   font-size: 1.2rem;
   text-transform: uppercase;
-
   background: ${(props) => props.theme["gray-400"]};
   color: ${(props) => props.theme["gray-700"]};
   transition: all 0.2s;

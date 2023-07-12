@@ -4,7 +4,7 @@ import { moneyFormat } from "../../../../utils/moneyFormat";
 import { Button, Confirmation } from "./styles";
 
 export function ConfirmationCard() {
-  const { cartQuantity, totalCartItems } = useContext(CartContext);
+  const { totalCartItems } = useContext(CartContext);
 
   const DELIVERY_PRICE = 5;
   const cartTotal = DELIVERY_PRICE + totalCartItems;
@@ -22,7 +22,7 @@ export function ConfirmationCard() {
           Total <span>R$ {moneyFormat(cartTotal)}</span>
         </h1>
       </Confirmation>
-      <Button type="submit" disabled={cartQuantity <= 0}>
+      <Button type="submit" disabled={cartTotal <= 5}>
         Confirmar pedido
       </Button>
     </>

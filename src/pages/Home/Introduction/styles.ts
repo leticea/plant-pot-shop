@@ -7,8 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
 
-  //border: 1px solid red;
-
   p {
     width: 100%;
     margin-left: -6rem;
@@ -21,8 +19,6 @@ export const Container = styled.div`
     top: 0;
     user-select: none;
     text-decoration: none;
-
-    //border: 1px solid red;
 
     background-image: linear-gradient(
       to right,
@@ -66,12 +62,9 @@ export const InfoGrid = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   list-style: none;
-
   position: absolute;
   bottom: 0;
   gap: 2rem;
-
-  //border: 1px solid red;
 `;
 
 const ICON_COLORS = {
@@ -92,10 +85,8 @@ export const InfoWithIcon = styled.li<InfoWithIconProps>`
   svg {
     background: ${(props) => props.theme[ICON_COLORS[props.iconColor]]};
     color: ${(props) => props.theme["gray-100"]};
-
     padding: 0.8rem;
     border-radius: 9999px;
-
     width: 3.2rem;
     height: 3.2rem;
   }

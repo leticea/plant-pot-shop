@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const PaymentInfo = styled.div`
   width: 64rem;
   height: 20.7rem;
-
   margin: 40.5rem 0 10rem 16rem;
   padding: 4rem;
   border-radius: 6px;
@@ -18,7 +17,6 @@ export const PaymentInfo = styled.div`
     display: flex;
     padding: 0;
     margin-left: -0.4rem;
-
     color: ${(props) => props.theme["gray-800"]};
   }
 
@@ -37,7 +35,6 @@ export const PaymentInfo = styled.div`
     padding: 0 3rem;
     font-size: 1.4rem;
     line-height: 130%;
-
     color: ${(props) => props.theme["gray-700"]};
   }
 
