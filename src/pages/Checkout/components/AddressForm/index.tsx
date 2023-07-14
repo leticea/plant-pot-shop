@@ -10,7 +10,7 @@ export function AddressForm() {
         className="cep"
         type="number"
         placeholder="CEP"
-        {...register("cep")}
+        {...register("cep", { valueAsNumber: true })}
       />
       <input className="street" placeholder="Rua" {...register("street")} />
       <section>
@@ -18,7 +18,7 @@ export function AddressForm() {
           className="number"
           type="number"
           placeholder="Número"
-          {...register("number")}
+          {...register("number", { valueAsNumber: true })}
         />
         <input
           className="complement"

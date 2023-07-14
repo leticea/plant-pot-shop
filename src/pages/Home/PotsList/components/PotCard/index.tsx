@@ -58,7 +58,7 @@ export function PotCard({ pot }: PlantPotCardProps) {
 
   function addToCart() {
     const cartItemID = `${pot.id}-${label}`;
-    
+
     const potToAdd = {
       ...pot,
       quantity,
